@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
-const forecastSlice = createSlice({
-  name: 'forecastSlice',
+const forecastInfoSlice = createSlice({
+  name: 'forecastInfoSlice',
   initialState: {
     location: {},
     current: {},
@@ -13,6 +13,6 @@ const forecastSlice = createSlice({
   },
 });
 
-export const {setForecastInfo} = forecastSlice.actions;
+export const {setForecastInfo} = forecastInfoSlice.actions;
 
-export default forecastSlice.reducer;
+export default forecastInfoSlice.reducer;

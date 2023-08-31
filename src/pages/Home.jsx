@@ -1,3 +1,9 @@
+import Layout from '../components/Layout';
+
 export default function Home() {
-  return <div>There will be a Weather web-app</div>;
+  return (
+    <Layout>
+      <div>Homepage</div>
+    </Layout>
+  );
 }
