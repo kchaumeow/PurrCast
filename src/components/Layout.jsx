@@ -139,10 +139,7 @@ export default function Layout({children}) {
             renderInput={(params) => <TextField {...params} label="City" />}
           />
         </Card>
-        <Card
-          sx={{p: 3, opacity: 0.7, minWidth: '50rem', minHeight: '20rem'}}
-          variant="outlined"
-        >
+        <Card sx={{p: 3, opacity: 0.7}} variant="outlined">
           {children}
         </Card>
       </Stack>

@@ -7,8 +7,8 @@ const forecastInfoSlice = createSlice({
     forecast: {},
   },
   reducers: {
-    setForecastInfo(state, action) {
-      state = action.payload;
+    setForecastInfo(_, action) {
+      return {...action.payload};
     },
   },
 });
