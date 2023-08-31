@@ -1,37 +1,43 @@
-import axios from "axios";
-import { store } from "./store/store";
-import { setForecast } from "./store/forecastSlice";
-const api_location_base_url = import.meta.env.VITE_API_LOCATION_REQUEST_URL;
-const api_get_ip_url = import.meta.env.VITE_API_GET_IP_URL;
+import axios from 'axios';
+import {store} from './store/store';
+import {setForecastInfo} from './store/forecastSlice';
+// constants for requests
+const API_LOCATION_BASE_URL = import.meta.env.VITE_API_LOCATION_REQUEST_URL;
+const API_GET_IP_URL = import.meta.env.VITE_API_GET_IP_URL;
+
+export function setForecastInfoToStore(location) {
+  store.dispatch(setForecastInfo(location));
+}
+
 export async function getLocationViaIP() {
-  const ip = await axios.get(api_get_ip_url);
+  const ip = await axios.get(API_GET_IP_URL);
   const location = await axios.get(
-    `${api_location_base_url}&q=${ip}&days=3&aqi=no&alerts=no`
+    `${API_LOCATION_BASE_URL}&q=${ip}&days=3&aqi=no&alerts=no`,
   );
-  store.dispatch(setForecast(location));
+  return location;
 }
 
 export async function getLocationViaCoords() {
-  getLocationPromisified()
-    .then((position) => {
+  return getLocationPromisified()
+    .then((location) => {
       return axios.get(
-        `${api_location_base_url}&q=${position.coords.latitude},${position.coords.longitude}&days=3&aqi=no&alerts=no`
+        `${API_LOCATION_BASE_URL}&q=${location.coords.latitude},${location.coords.longitude}&days=3&aqi=no&alerts=no`,
       );
     })
-    .then((result) => {
-      store.dispatch(setForecast(result.data));
+    .then((location) => {
+      return location;
     });
 }
 
 function getLocationPromisified() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        resolve(position);
+      (location) => {
+        resolve(location);
       },
       (err) => {
         reject(err);
-      }
+      },
     );
   });
 }
