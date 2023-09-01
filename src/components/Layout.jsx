@@ -128,18 +128,22 @@ const top100Films = [
 ];
 export default function Layout({children}) {
   return (
-    <Stack spacing={10} alignItems="center">
+    <Stack spacing={10} alignItems="center" sx={{width: '100%'}}>
       <h2>Everyday PurrCast</h2>
-      <Stack spacing={2} justifyContent="center" alignItems="center">
-        <Card sx={{p: 3, opacity: 0.7, minWidth: '50rem'}}>
+      <Stack
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+        sx={{width: '60%'}}
+      >
+        <Card sx={{p: 3, width: '100%'}}>
           <Autocomplete
-            id="free-solo-demo"
             freeSolo
             options={top100Films.map((option) => option.label)}
             renderInput={(params) => <TextField {...params} label="City" />}
           />
         </Card>
-        <Card sx={{p: 3, opacity: 0.7}} variant="outlined">
+        <Card sx={{p: 3, width: '100%'}} variant="outlined">
           {children}
         </Card>
       </Stack>

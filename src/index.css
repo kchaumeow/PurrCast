@@ -12,12 +12,12 @@ body {
 }
 
 #root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, system-ui;
   display: flex;
+  padding: 1em;
+  place-content: center;
   flex-direction: column;
-  place-content:  center;
-  place-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(123deg, rgba(123, 52, 239, 0.85) 16.23%, #228AEA 82.96%);
 }
 
@@ -25,4 +25,9 @@ h2 {
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 36px;
+}
+
+.temperature{
+  font-size:x-large;
+  font-weight: 700;
 }
