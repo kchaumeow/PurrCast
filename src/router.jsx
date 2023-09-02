@@ -3,7 +3,7 @@ import {
   getLocationViaIP,
   getLocationViaCoords,
   setForecastInfoToStore,
-} from './api.js';
+} from './api/api.js';
 import {createBrowserRouter} from 'react-router-dom';
 export const router = createBrowserRouter([
   {

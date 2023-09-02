@@ -14,7 +14,7 @@ export default function DayForecast({dayForecast}) {
       }}
     >
       <Stack alignItems="center" sx={{height: '100%'}} justifyContent="center" spacing={1}>
-        <div>{new Date(dayForecast.date).toLocaleDateString()}</div>
+        <div className='bold'>{new Date(dayForecast.date).toLocaleDateString()}</div>
         <Stack
           alignItems="center"
           sx={{height: '100%'}}
@@ -25,13 +25,12 @@ export default function DayForecast({dayForecast}) {
           {dayForecast.hour.map((hour, index) => {
             return (
               index % 4 === 0 && (
-                <Tooltip title={hour.condition.text} placement="top">
+                <Tooltip arrow title={hour.condition.text} placement="top">
                   <Card
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      height: '100%',
                       flexDirection: 'column',
                       padding: '0.4rem',
                       width: '8rem',
@@ -45,7 +44,7 @@ export default function DayForecast({dayForecast}) {
                         width={60}
                         height={60}
                       />
-                      <div className="temperature">{hour.temp_c}</div>
+                      <div className="bold">{hour.temp_c}</div>
                     </Stack>
                     <div>{hour.time.split(' ')[1]}</div>
                   </Card>
