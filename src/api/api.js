@@ -36,8 +36,8 @@ export async function getLocationViaCoords() {
     });
 }
 
-export async function getForecastInCity(city) {
-  return await axios.get(
+export function getForecastInCity(city) {
+  return axios.get(
     `${API_LOCATION_BASE_URL}&q=${city}&days=3&aqi=no&alerts=no`,
   );
 }

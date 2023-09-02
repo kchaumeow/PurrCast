@@ -1,4 +1,5 @@
 import Home from './pages/Home.jsx';
+import City from './pages/City.jsx';
 import {
   getLocationViaIP,
   getLocationViaCoords,
@@ -17,5 +18,9 @@ export const router = createBrowserRouter([
       }
       return null;
     },
+  },
+  {
+    element: <City />,
+    path: '/:cityName',
   },
 ]);
