@@ -23,6 +23,7 @@ export default function CityInput() {
     <Stack direction="row" gap={2}>
       <Box sx={{width: '100%'}}>
         <ReactSearchAutocomplete
+        placeholder='Type your city here...'
           styling={{
             height: '34px',
             borderRadius: '4px',
