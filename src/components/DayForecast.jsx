@@ -13,14 +13,22 @@ export default function DayForecast({dayForecast}) {
         height: '100%',
       }}
     >
-      <Stack alignItems="center" sx={{height: '100%'}} justifyContent="center" spacing={1}>
-        <div className='bold'>{new Date(dayForecast.date).toLocaleDateString()}</div>
+      <Stack
+        alignItems="center"
+        sx={{height: '100%'}}
+        justifyContent="center"
+        spacing={1}
+      >
+        <div className="bold">
+          {new Date(dayForecast.date).toLocaleDateString()}
+        </div>
         <Stack
           alignItems="center"
           sx={{height: '100%'}}
           justifyContent="center"
-          spacing={3}
+          gap={{xs: 1, sm: 3}}
           direction="row"
+          flexWrap="wrap"
         >
           {dayForecast.hour.map((hour, index) => {
             return (

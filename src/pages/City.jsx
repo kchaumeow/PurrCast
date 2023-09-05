@@ -13,7 +13,7 @@ export default function City() {
       setForecast(forecastInfo.forecast.forecastday);
     };
     getForecast();
-  }, []);
+  }, [cityName]);
   return (
     <Layout>
       <div>{cityName}</div>

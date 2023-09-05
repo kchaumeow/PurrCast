@@ -9,9 +9,9 @@ export default function Layout({children}) {
         spacing={2}
         justifyContent="center"
         alignItems="center"
-        sx={{width: '60%'}}
+        sx={{width: {xs: 'calc(100% - 16px)', md: '90%', lg: '60%'}}}
       >
-        <Card sx={{p: 3, width: '100%'}}>
+        <Card sx={{p: 3, width: '100%', overflow: 'visible'}}>
           <CityInput />
         </Card>
         <Card sx={{p: 3, width: '100%'}} variant="outlined">

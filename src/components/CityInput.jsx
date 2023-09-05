@@ -1,7 +1,8 @@
-import {Autocomplete, Stack, TextField} from '@mui/material';
+import {ReactSearchAutocomplete} from 'react-search-autocomplete';
 import {useEffect, useState} from 'react';
 import {getAllCities} from '../api/api';
 import SearchCityButton from './SearchCityButton';
+import {Stack, Box} from '@mui/material';
 
 export default function CityInput() {
   const [city, setCity] = useState('');
@@ -19,20 +20,24 @@ export default function CityInput() {
   }, []);
 
   return (
-    <Stack direction="row" spacing={2}>
-      <Autocomplete
-        fullWidth
-        freeSolo
-        options={cities.map((city) => city.name)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="City"
-            value={city}
-            onChange={setCity(event.target.value)}
-          />
-        )}
-      />
+    <Stack direction="row" gap={2}>
+      <Box sx={{width: '100%'}}>
+        <ReactSearchAutocomplete
+          styling={{
+            height: '34px',
+            borderRadius: '4px',
+            backgroundColor: '#F1F1F1',
+            boxShadow: 'none',
+            lineColor: 'gray',
+            clearIconMargin: '3px 8px 0 0',
+            zIndex: 10,
+          }}
+          onSelect={(newValue) => setCity(newValue.name)}
+          onSearch={(newValue) => setCity(newValue.name)}
+          items={cities}
+          autoFocus
+        />
+      </Box>
       <SearchCityButton city={city} />
     </Stack>
   );
