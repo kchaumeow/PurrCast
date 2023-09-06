@@ -23,7 +23,7 @@ export default function CityInput() {
     <Stack direction="row" gap={2}>
       <Box sx={{width: '100%'}}>
         <ReactSearchAutocomplete
-        placeholder='Type your city here...'
+          placeholder="Type your city here..."
           styling={{
             height: '34px',
             borderRadius: '4px',
@@ -34,9 +34,10 @@ export default function CityInput() {
             zIndex: 10,
           }}
           onSelect={(newValue) => setCity(newValue.name)}
-          onSearch={(newValue) => setCity(newValue.name)}
+          onSearch={(newValue,result) => console.log(newValue)}
           items={cities}
           autoFocus
+          showNoResultsText
         />
       </Box>
       <SearchCityButton city={city} />
