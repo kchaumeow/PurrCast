@@ -1,7 +1,9 @@
-import {Card, Stack} from '@mui/material';
+import {Box, Button, Card, Stack} from '@mui/material';
 import CityInput from './CityInput';
+import {useNavigate} from 'react-router-dom';
 
 export default function Layout({children}) {
+  const navigate = useNavigate();
   return (
     <Stack spacing={10} alignItems="center" sx={{width: '100%'}}>
       <h2>Everyday PurrCast</h2>
@@ -12,7 +14,14 @@ export default function Layout({children}) {
         sx={{width: {xs: 'calc(100% - 16px)', md: '90%', lg: '60%'}}}
       >
         <Card sx={{p: 3, width: '100%', overflow: 'visible'}}>
-          <CityInput />
+          <Stack direction="row" spacing={2}>
+            <Button variant="contained" onClick={() => navigate('/')}>
+              Home
+            </Button>
+            <Box sx={{width:'100%'}}>
+              <CityInput />
+            </Box>
+          </Stack>
         </Card>
         <Card sx={{p: 3, width: '100%'}} variant="outlined">
           {children}

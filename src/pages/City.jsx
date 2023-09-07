@@ -18,7 +18,7 @@ export default function City() {
   return (
     <Layout>
       <Stack direction="row" spacing={2} justifyContent="space-between">
-        <div>{cityName}</div>
+        <div className="bold">{cityName}</div>
         <SetCityButton city={cityName} />
       </Stack>
       <ForecastStack forecastArray={forecast} />
