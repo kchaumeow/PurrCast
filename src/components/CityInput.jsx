@@ -2,7 +2,7 @@ import {ReactSearchAutocomplete} from 'react-search-autocomplete';
 import {useEffect, useState} from 'react';
 import {getAllCities} from '../api/api';
 import {Stack, Box, Button} from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export default function CityInput() {
   const [city, setCity] = useState('');
@@ -35,8 +35,9 @@ export default function CityInput() {
             zIndex: 10,
           }}
           onSelect={(newValue) => setCity(newValue.name)}
-          onSearch={(newValue) => console.log(newValue)}
+          onSearch={(newValue, result) => setCity(newValue)}
           items={cities}
+          inputDebounce={0}
           autoFocus
           showNoResultsText
         />
