@@ -10,7 +10,9 @@ export default function Home() {
   const cityName = getCityFromLocalStorage();
   return (
     <Layout>
-      <div>{`Your current city: ` + cityName}</div>
+      {cityName && (
+        <div className="bold">{`Your current city: ` + cityName}</div>
+      )}
       <ForecastStack forecastArray={forecastArray} />
     </Layout>
   );
