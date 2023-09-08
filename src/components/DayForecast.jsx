@@ -33,7 +33,12 @@ export default function DayForecast({dayForecast}) {
           {dayForecast.hour.map((hour, index) => {
             return (
               index % 4 === 0 && (
-                <Tooltip arrow title={hour.condition.text} placement="top">
+                <Tooltip
+                  arrow
+                  title={hour.condition.text}
+                  placement="top"
+                  key={hour.time_epoch}
+                >
                   <Card
                     sx={{
                       display: 'flex',
