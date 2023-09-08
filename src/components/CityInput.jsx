@@ -21,7 +21,7 @@ export default function CityInput() {
   }, []);
 
   return (
-    <Stack direction="row" gap={2}>
+    <Stack direction="row" gap={2} sx={{flexWrap: {xs: 'wrap', md: 'nowrap'}}}>
       <Box sx={{width: '100%'}}>
         <ReactSearchAutocomplete
           placeholder="Type your city here..."

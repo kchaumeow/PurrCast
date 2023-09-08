@@ -1,4 +1,4 @@
-import {Alert, Button, Snackbar} from '@mui/material';
+import {Alert, Button, Snackbar, Stack} from '@mui/material';
 import {setCityToLocalStorage} from '../localStore';
 import {useState} from 'react';
 export default function SetCityButton({city}) {
@@ -25,9 +25,17 @@ export default function SetCityButton({city}) {
           {`City ${city} was set as default`}
         </Alert>
       </Snackbar>
-      <Button size="small" variant="contained" onClick={onClickSetDefaultCity}>
-        Set as default
-      </Button>
+      <Stack direction="row" alignItems="center">
+        <Button size="small" variant='primary' onClick={onClickSetDefaultCity}>
+          <div>Set as default</div>
+          <img
+            src="/location.svg"
+            alt="Location"
+            width={50}
+            height={50}
+          />
+        </Button>
+      </Stack>
     </>
   );
 }

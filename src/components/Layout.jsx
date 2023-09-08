@@ -14,11 +14,11 @@ export default function Layout({children}) {
         sx={{width: {xs: 'calc(100% - 16px)', md: '90%', lg: '60%'}}}
       >
         <Card sx={{p: 3, width: '100%', overflow: 'visible'}}>
-          <Stack direction="row" spacing={2}>
-            <Button variant="contained" onClick={() => navigate('/')}>
-              Home
+          <Stack direction="row" spacing={2} alignItems="center">
+            <Button variant="primary" onClick={() => navigate('/')} >
+              <img src="/home.svg" alt="Home" width={50} height={50}/>
             </Button>
-            <Box sx={{width:'100%'}}>
+            <Box sx={{width: '100%'}}>
               <CityInput />
             </Box>
           </Stack>
