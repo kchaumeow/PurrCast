@@ -17,7 +17,9 @@ export default function CityInput() {
         setCities(citiesArray.default);
       }
     };
-    getCities();
+    if (!cities) {
+      getCities();
+    }
   }, []);
 
   return (
