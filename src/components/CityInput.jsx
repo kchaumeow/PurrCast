@@ -17,11 +17,8 @@ export default function CityInput() {
         setCities(citiesArray.default);
       }
     };
-    if (!cities) {
-      getCities();
-    }
+    getCities();
   }, []);
-
   return (
     <Stack direction="row" gap={2} sx={{flexWrap: {xs: 'wrap', md: 'nowrap'}}}>
       <Box sx={{width: '100%'}}>
