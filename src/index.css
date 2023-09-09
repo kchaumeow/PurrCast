@@ -9,6 +9,8 @@ body {
   overflow-x: hidden;
   background-color: #f5f5f5;
   min-height: 100vh;
+  --bg-variable: linear-gradient(123deg, rgba(123, 52, 239, 0.85) 16.23%, #228AEA 82.96%);
+  background: var(--bg-variable);
 }
 
 #root {
@@ -18,7 +20,7 @@ body {
   place-content: center;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(123deg, rgba(123, 52, 239, 0.85) 16.23%, #228AEA 82.96%);
+
 }
 
 h2 {

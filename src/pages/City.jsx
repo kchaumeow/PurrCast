@@ -4,7 +4,7 @@ import {getForecastInCity} from '../api/api';
 import {useEffect, useState} from 'react';
 import ForecastStack from '../components/ForecastStack';
 import SetCityButton from '../components/SetCityButton';
-import {Box, Button, Stack} from '@mui/material';
+import {Box, Button, IconButton, Stack} from '@mui/material';
 export default function City() {
   const navigate = useNavigate();
   const [forecast, setForecast] = useState([]);
@@ -15,6 +15,7 @@ export default function City() {
     const getForecast = async () => {
       setError(null);
       try {
+        
         const forecastInfo = (await getForecastInCity(cityName)).data;
         setForecast(forecastInfo.forecast.forecastday);
         setError(null);
@@ -33,9 +34,9 @@ export default function City() {
         <Stack alignItems="center" spacing={4}>
           <div className="bold">Something went wrong</div>
           {error.message && <Box px={1}>{error.message}</Box>}
-          <Button variant="primary" onClick={() => navigate('/')}>
+          <IconButton variant="primary" onClick={() => navigate('/')}>
             <img src="/home.svg" alt="Home" width={200} height={200} />
-          </Button>
+          </IconButton>
         </Stack>
       ) : (
         <>
